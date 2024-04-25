@@ -18,5 +18,3 @@ else
   sh -c "$(wget -O- https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
 fi
 
-# Entry Point to Main Playbook
-ansible-playbook main.yml --ask-vault-pass
