@@ -37,10 +37,16 @@
     - install
     - ssh
 
-- name: Add SSH private key to ssh-agent
-  shell: ssh-add "{{ dest_key }}"
+- name: Ensure ssh-agent is running and add SSH private key
   environment:
-    SSH_AUTH_SOCK: "{{ ssh_agent_output.stdout_lines[-1] | regex_replace('^.*? (.*?);.*$', '\\1') }}"
+    SSH_AUTH_SOCK: "{{ lookup('env', 'SSH_AUTH_SOCK') }}"
+    SSH_AGENT_PID: "{{ lookup('env', 'SSH_AGENT_PID') }}"
+  become: true
+  ansible.builtin.shell: |
+    eval $(ssh-agent -s)
+    ssh-add "{{ dest_key }}"
+  register: ssh_agent_output
+  changed_when: "'Identity added' in ssh_agent_output.stdout"
   tags:
     - dotfiles
     - install
