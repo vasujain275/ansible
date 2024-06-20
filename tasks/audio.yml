@@ -1,0 +1,56 @@
+---
+- name: Install Pipewire and related packages
+  become: yes
+  package:
+    name:
+      - pipewire
+      - pipewire-alsa
+      - pipewire-pulse
+      - pipewire-jack
+      - wireplumber
+      - qpwgraph
+    state: present
+  tags:
+    - dotfiles
+    - install
+    - pipewire
+    - audio
+
+- name: Enable and start Pipewire socket
+  become: yes
+  systemd:
+    name: pipewire.socket
+    enabled: yes
+    state: started
+    scope: user
+  tags:
+    - dotfiles
+    - install
+    - pipewire
+    - audio
+
+- name: Enable and start Pipewire Pulse socket
+  become: yes
+  systemd:
+    name: pipewire-pulse.socket
+    enabled: yes
+    state: started
+    scope: user
+  tags:
+    - dotfiles
+    - install
+    - pipewire
+    - audio
+
+- name: Enable and start Wireplumber service
+  become: yes
+  systemd:
+    name: wireplumber
+    enabled: yes
+    state: started
+    scope: user
+  tags:
+    - dotfiles
+    - install
+    - pipewire
+    - audio

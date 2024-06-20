@@ -1,0 +1,29 @@
+- name: Install ZSH and utilities
+  become: yes
+  package:
+    name:
+      - zsh
+      - starship
+      - zoxide
+      - fnm
+      - eza
+      - bat
+      - tree
+      - grep
+      - ripgrep
+      - fzf
+    state: present
+  tags:
+    - dotfiles
+    - install
+    - zsh
+
+- name: Change default shell to ZSH
+  become: yes
+  shell: chsh -s $(which zsh) {{ ansible_user }}
+  args:
+    executable: /bin/bash
+  tags:
+    - dotfiles
+    - install
+    - zsh

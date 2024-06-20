@@ -1,0 +1,52 @@
+- name: Install fnm
+  become: yes
+  package:
+    name:
+      - fnm
+    state: present
+
+- name: Install Node.js using fnm
+  become: yes
+  command: fnm install v22.2.0
+  tags:
+    - dev
+    - nodejs
+    - fnm
+
+- name: Set default Node.js version using fnm
+  become: yes
+  command: fnm default v22.2.0
+  tags:
+    - dev
+    - nodejs
+    - fnm
+
+- name: Install yarn using pacman
+  become: yes
+  package:
+    name: yarn
+    state: present
+  tags:
+    - dev
+    - nodejs
+    - yarn
+
+- name: Install pnpm using pacman
+  become: yes
+  package:
+    name: pnpm
+    state: present
+  tags:
+    - dev
+    - nodejs
+    - pnpm
+
+- name: Install bruno-bin AUR package using yay
+  become: yes
+  yay:
+    name: bruno-bin
+    state: present
+  tags:
+    - dev
+    - nodejs
+    - aur

@@ -1,0 +1,15 @@
+- name: Install Rust using rustup
+  become: yes
+  command: rustup install stable
+  tags:
+    - dev
+    - rust
+    - rustup
+
+- name: Set default Rust version using rustup
+  become: yes
+  command: rustup default stable
+  tags:
+    - dev
+    - rust
+    - rustup

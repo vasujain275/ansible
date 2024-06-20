@@ -1,0 +1,53 @@
+- name: Receive Chaotic AUR key
+  become: yes
+  command: pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+  tags:
+    - dotfiles
+    - install
+    - aur
+    - chaotic-aur
+
+- name: Sign Chaotic AUR key
+  become: yes
+  command: pacman-key --lsign-key 3056513887B78AEB
+  tags:
+    - dotfiles
+    - install
+    - aur
+    - chaotic-aur
+
+- name: Install Chaotic AUR keyring
+  become: yes
+  pacman:
+    name: https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst
+    state: present
+  tags:
+    - dotfiles
+    - install
+    - aur
+    - chaotic-aur
+
+- name: Install Chaotic AUR mirrorlist
+  become: yes
+  pacman:
+    name: https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst
+    state: present
+  tags:
+    - dotfiles
+    - install
+    - aur
+    - chaotic-aur
+
+- name: Append Chaotic AUR repository to pacman.conf
+  become: yes
+  lineinfile:
+    path: /etc/pacman.conf
+    line: |
+      [chaotic-aur]
+      Include = /etc/pacman.d/chaotic-mirrorlist
+    state: present
+  tags:
+    - dotfiles
+    - install
+    - aur
+    - chaotic-aur
