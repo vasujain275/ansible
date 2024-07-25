@@ -11,7 +11,6 @@
         update_cache: yes
 
   tasks:
-
     - name: Include SSH tasks
       include_tasks: tasks/ssh.yml
       tags:
@@ -63,6 +62,11 @@
       include_tasks: tasks/firefox.yml
       tags:
         - firefox
+
+    - name: Include Dev Deps
+      include_tasks: tasks/dev.yml
+      tags:
+        - dev
 
     - name: Include Node tasks
       include_tasks: tasks/node.yml

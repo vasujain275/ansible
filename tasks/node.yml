@@ -1,5 +1,5 @@
 - name: Install Node.js using fnm
-  become: yes
+  become: no
   command: fnm install 22
   tags:
     - dev
@@ -7,7 +7,7 @@
     - fnm
 
 - name: Set default Node.js version using fnm
-  become: yes
+  become: no
   command: fnm default 22
   tags:
     - dev
@@ -33,9 +33,8 @@
     - dev
     - nodejs
     - pnpm
-
 #- name: Install bruno-bin AUR package using yay
-#  become: no 
+#  become: no
 #  command: yay -S --noconfirm bruno-bin
 #  tags:
 #    - dev

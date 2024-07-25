@@ -1,0 +1,15 @@
+- name: Install essential Dev Deps
+  become: yes
+  package:
+    name:
+      - stow
+      - nodejs
+      - lazygit
+      - lazydocker
+
+    state: present
+  tags:
+    - essentials
+    - install
+    - pacman
+    - dev
