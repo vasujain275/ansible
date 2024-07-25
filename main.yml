@@ -3,6 +3,7 @@
     source_key: "./.ssh/id_ed25519"
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
     personal: "{{ lookup('env', 'HOME') }}/personal"
+    ansible_user: "vasu"
   pre_tasks:
     - name: Update Pacman repositories
       become: true
@@ -10,10 +11,6 @@
         update_cache: yes
 
   tasks:
-    - name: Include ZSH tasks
-      include_tasks: tasks/zsh.yml
-      tags:
-        - zsh
 
     - name: Include SSH tasks
       include_tasks: tasks/ssh.yml
@@ -31,6 +28,11 @@
       tags:
         - aur
         - chaotic-aur
+
+    - name: Include ZSH tasks
+      include_tasks: tasks/zsh.yml
+      tags:
+        - zsh
 
     - name: Include Fonts tasks
       include_tasks: tasks/fonts.yml

@@ -2,10 +2,10 @@
   become: yes
   package:
     name:
-      - hyprpaper-git
-      - hyprlock-git
-      - hypridle-git
-      - waypaper-git
+      - hyprpaper
+      - hyprlock
+      - hypridle
+      - waypaper
     state: present
   tags:
     - dotfiles

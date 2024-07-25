@@ -23,7 +23,7 @@
       - uwufetch
       - zoom
       - visual-studio-code-bin
-      - vdesktop
+      - vesktop
       - qbittorrent-enhanced
       - cloudflare-warp-bin
       - ncdu
@@ -34,12 +34,10 @@
     - install
     - pacman
 
-- name: Install AUR application using yay
-  become: yes
-  yay:
-    name: localsend-bin
-    state: present
-  tags:
-    - essentials
-    - install
-    - aur
+#- name: Install AUR application using yay
+#  become: no
+#  command: yay -S --noconfirm localsend-bin
+#  tags:
+#    - essentials
+#    - install
+#    - aur

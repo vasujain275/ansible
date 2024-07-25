@@ -17,9 +17,9 @@
     - audio
 
 - name: Enable and start Pipewire socket
-  become: yes
+  become: no
   systemd:
-    name: pipewire.socket
+    name: pipewire
     enabled: yes
     state: started
     scope: user
@@ -30,9 +30,9 @@
     - audio
 
 - name: Enable and start Pipewire Pulse socket
-  become: yes
+  become: no
   systemd:
-    name: pipewire-pulse.socket
+    name: pipewire-pulse
     enabled: yes
     state: started
     scope: user
@@ -43,7 +43,7 @@
     - audio
 
 - name: Enable and start Wireplumber service
-  become: yes
+  become: no
   systemd:
     name: wireplumber
     enabled: yes
@@ -54,3 +54,4 @@
     - install
     - pipewire
     - audio
+

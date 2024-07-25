@@ -5,7 +5,7 @@
       - zsh
       - starship
       - zoxide
-      - fnm
+      - chaotic-aur/fnm
       - eza
       - bat
       - tree
