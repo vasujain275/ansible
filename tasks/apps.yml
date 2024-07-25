@@ -28,12 +28,12 @@
       - cloudflare-warp-bin
       - ncdu
       - obsidian
+      - thunar
     state: present
   tags:
     - essentials
     - install
     - pacman
-
 #- name: Install AUR application using yay
 #  become: no
 #  command: yay -S --noconfirm localsend-bin
