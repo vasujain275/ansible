@@ -9,6 +9,7 @@
       - pipewire-jack
       - wireplumber
       - qpwgraph
+      - pavucontrol
     state: present
   tags:
     - dotfiles
@@ -54,4 +55,3 @@
     - install
     - pipewire
     - audio
-
