@@ -6,6 +6,7 @@
       - hyprlock
       - hypridle
       - waypaper
+      - archlinux-xdg-menu
     state: present
   tags:
     - dotfiles
