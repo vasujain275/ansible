@@ -10,5 +10,5 @@ chmod +x install
 # For just ssh keys - 
 
 ```zsh
-ansible-playbook ./standalones/ssh-setup.yml --ask-become-pass --ask-vault-pass
+ansible-playbook ./standalones/ssh-setup.yml --ask-vault-pass
 ```
