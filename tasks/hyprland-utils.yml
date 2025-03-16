@@ -19,7 +19,7 @@
   package:
     name:
       - dunst
-      - rofi-lbonn-wayland-git
+      - rofi-wayland
       - waybar
       - wlogout
       - hyprshot

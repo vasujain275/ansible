@@ -18,9 +18,7 @@
 
 - name: Install Chaotic AUR keyring
   become: yes
-  pacman:
-    name: https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst
-    state: present
+  command: pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
   tags:
     - dotfiles
     - install
@@ -29,9 +27,7 @@
 
 - name: Install Chaotic AUR mirrorlist
   become: yes
-  pacman:
-    name: https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst
-    state: present
+  command: pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
   tags:
     - dotfiles
     - install

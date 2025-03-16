@@ -22,11 +22,11 @@
         - aur
         - yay
 
-    - name: Include Chaotic AUR tasks
-      include_tasks: tasks/chaotic-aur.yml
-      tags:
-        - aur
-        - chaotic-aur
+#    - name: Include Chaotic AUR tasks
+#      include_tasks: tasks/chaotic-aur.yml
+#      tags:
+#        - aur
+#        - chaotic-aur
 
     - name: Include ZSH tasks
       include_tasks: tasks/zsh.yml
