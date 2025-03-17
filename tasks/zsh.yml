@@ -2,7 +2,11 @@
   become: yes
   package:
     name:
+      - wget
+      - kitty
+      - progress
       - zsh
+      - exfatprogs
       - starship
       - zoxide
       - chaotic-aur/fnm
@@ -12,6 +16,11 @@
       - grep
       - ripgrep
       - fzf
+      - yazi
+      - zip
+      - unrar
+      - file-roller
+      - duf
     state: present
   tags:
     - dotfiles

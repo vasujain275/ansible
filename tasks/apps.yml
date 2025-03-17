@@ -11,6 +11,9 @@
       - appimagelauncher
       - btop
       - htop
+      - lm_sensors
+      - inxi
+      - anydesk-bin
       - fastfetch
       - gparted
       - hugo
@@ -29,6 +32,27 @@
       - ncdu
       - obsidian
       - thunar
+      - ffmpeg
+      - deadbeef
+      - imagemagick
+      - gimp
+      - imv
+      - libreoffice-fresh
+      - element-desktop
+      - google-chrome
+      - bc
+      - dolphin
+      - libnotify
+      - v4l-utils
+      - ydotool
+      - pciutils
+      - socat
+      - cowsay
+      - lshw
+      - swappy
+      - playerctl
+      - ventoy
+      - youtube-music-bin
     state: present
   tags:
     - essentials

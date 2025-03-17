@@ -2,11 +2,14 @@
   become: yes
   package:
     name:
-      - hyprpaper
+      - swww
+      - hyprpicker
       - hyprlock
       - hypridle
       - waypaper
       - archlinux-xdg-menu
+      - grim
+      - slurp
     state: present
   tags:
     - dotfiles
