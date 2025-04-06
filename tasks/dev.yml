@@ -6,10 +6,26 @@
       - nodejs
       - lazygit
       - lazydocker
+      - chaotic-aur/android-studio
 
     state: present
   tags:
     - essentials
     - install
     - pacman
+    - dev
+
+- name: Install AUR Dev Deps with yay
+  become: no
+  community.general.pacman:
+    name:
+      - intellij-idea-ultimate-edition
+      - bruno-bin
+      - localsend-bin
+    executable: yay
+    state: present
+  tags:
+    - essentials
+    - install
+    - aur
     - dev

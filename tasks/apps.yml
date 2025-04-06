@@ -53,15 +53,10 @@
       - playerctl
       - ventoy
       - youtube-music-bin
+      - chaotic-aur/rustdesk-bin
+
     state: present
   tags:
     - essentials
     - install
     - pacman
-#- name: Install AUR application using yay
-#  become: no
-#  command: yay -S --noconfirm localsend-bin
-#  tags:
-#    - essentials
-#    - install
-#    - aur

@@ -22,11 +22,11 @@
         - aur
         - yay
 
-#    - name: Include Chaotic AUR tasks
-#      include_tasks: tasks/chaotic-aur.yml
-#      tags:
-#        - aur
-#        - chaotic-aur
+    #    - name: Include Chaotic AUR tasks
+    #      include_tasks: tasks/chaotic-aur.yml
+    #      tags:
+    #        - aur
+    #        - chaotic-aur
 
     - name: Include ZSH tasks
       include_tasks: tasks/zsh.yml
@@ -68,10 +68,20 @@
       tags:
         - dev
 
+    - name: Include Docker tasks
+      include_tasks: tasks/docker.yml
+      tags:
+        - docker
+
     - name: Include Node tasks
       include_tasks: tasks/node.yml
       tags:
         - node
+
+    - name: Include Java tasks
+      include_tasks: tasks/java.yml
+      tags:
+        - java
 
     - name: Include Rust tasks
       include_tasks: tasks/rust.yml
