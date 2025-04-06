@@ -4,6 +4,7 @@
     name:
       - wget
       - kitty
+      - ghostty
       - progress
       - zsh
       - exfatprogs
